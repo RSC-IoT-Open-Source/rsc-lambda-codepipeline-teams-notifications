@@ -1,0 +1,14 @@
+{
+  "name": "codepipeline-teams-notifications",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": { },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "clean-log": "^0.1.2",
+    "moment": "^2.22.1"
+  }
+}
