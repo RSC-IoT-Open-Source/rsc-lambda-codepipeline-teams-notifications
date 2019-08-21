@@ -3,7 +3,7 @@ resource "aws_lambda_function" "lambda" {
   function_name    = "codepipeline-teams-notifications"
   role             = "${aws_iam_role.lambda.arn}"
   handler          = "index.handler"
-  source_code_hash = "${base64sha256(file("../lambda.zip"))}"
+  source_code_hash = "${filebase64sha256("../lambda.zip")}
   runtime          = "nodejs8.10"
   timeout          = 20
 
@@ -15,9 +15,9 @@ resource "aws_lambda_function" "lambda" {
 }
 
 resource "aws_lambda_permission" "cloudwatch_execution" {
-  statement_id   = "AllowExecutionFromCloudWatch"
-  action         = "lambda:InvokeFunction"
-  function_name  = "${aws_lambda_function.lambda.function_name}"
-  principal      = "events.amazonaws.com"
-  source_arn     = "${aws_cloudwatch_event_rule.codepipeline_event.arn}"
+  statement_id  = "AllowExecutionFromCloudWatch"
+  action        = "lambda:InvokeFunction"
+  function_name = "${aws_lambda_function.lambda.function_name}"
+  principal     = "events.amazonaws.com"
+  source_arn    = "${aws_cloudwatch_event_rule.codepipeline_event.arn}"
 }

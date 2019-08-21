@@ -5,7 +5,7 @@ Lambda function to handle CodePipeline CloudWatch events and send a notification
 ![Started](docs/sample-notification-succeeded.png)
 
 ### Deployment
-Requires Terraform to be installed.
+Requires Terraform 0.12+ to be installed.
 
 1. Change permissions of deployment bash script `chmod +x deploy.sh`
 2. Run `./deploy.sh` which will prompt you for the following variables:
