@@ -3,7 +3,7 @@ resource "aws_lambda_function" "lambda" {
   function_name    = "codepipeline-teams-notifications"
   role             = "${aws_iam_role.lambda.arn}"
   handler          = "index.handler"
-  source_code_hash = "${filebase64sha256("../lambda.zip")}
+  source_code_hash = "${filebase64sha256("../lambda.zip")}"
   runtime          = "nodejs8.10"
   timeout          = 20
 

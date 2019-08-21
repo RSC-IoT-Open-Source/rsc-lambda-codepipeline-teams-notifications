@@ -5,3 +5,4 @@ node_modules
 .terraform
 lambda.zip
 
+terraform/terraform.tfstate
