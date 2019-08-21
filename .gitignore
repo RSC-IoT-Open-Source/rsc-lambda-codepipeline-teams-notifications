@@ -6,3 +6,4 @@ node_modules
 lambda.zip
 
 terraform/terraform.tfstate
+terraform/terraform.tfstate.backup
